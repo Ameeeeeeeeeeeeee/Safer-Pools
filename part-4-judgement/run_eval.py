@@ -20,7 +20,7 @@ from common.io import write_text
 from paths import LOG_DIR, QUEUE_DIR, STAT_DIR, ensure_dirs
 
 PART = Path(__file__).resolve().parent
-VLLM_PY = "/root/miniconda3/envs/trl-vllm/bin/python"
+VLLM_PY = os.environ.get("VLLM_PY", sys.executable)
 
 
 def parse_args() -> argparse.Namespace:
